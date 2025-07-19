@@ -1,0 +1,28 @@
+T13
+;
+T12 T13
+o;
+T10 T12 T9 T13
+(o);
+T12 T6 T12 T13
+h<o;
+T5 T10 T12 T9 T13
+while(h);
+T11 T13
+5;
+T11 T7 T12 T13
+5+h;
+T3 T2
+{}
+T3 T13 T2
+{;}
+T5 T10 T12 T8 T11 T9 T3 T2
+while(z=1){}
+T4 T10 T11 T9 T3 T2
+if(1){}
+T1 T3 T2 T5 T10 T12 T9 T13
+do{}while(a);
+T3 T13 T13 T2
+{;;}
+T4 T10 T12 T9 T13 T0 T13
+if(p);else;

@@ -4,7 +4,7 @@ from typing import Collection
 from tqdm import tqdm
 
 from crucio.data_types import Grammar
-from crucio.evaluate.mutate.mutate_examples import evaluateMutatePrecision
+from crucio.evaluate.mutate.mutate_examples import evaluateSwapPrecision
 from crucio.instantiate.node.core.node_grow.per_prod_limit import PerProdLimitSNG
 from crucio.instantiate.symbol.symbol_ins import SngSymbolInstantiator
 from crucio.oracle.extend.naive import NaiveExtendOracle
@@ -105,15 +105,15 @@ def evaluateGrammarPm2(grammar: Grammar, oracle: TokenizedOracle, testSet: Colle
     cost = time.time() - start
     print('r=', recall / len(testSet))
     print('Eval of mutate precision:')
-    pM = evaluateMutatePrecision(parsed, grammar, oracle)
+    pM = evaluateSwapPrecision(parsed, grammar, oracle)
     print('pM=', pM)
     S = 0
     for prod in grammar.getProds():
         S += len(prod)
     T = len(grammar.getCharset())
     A = len(list(grammar.getProds()))
-    return {'pS': precision / total,
-            'pM': pM,
+    return {'pSample': precision / total,
+            'pSwap': pM,
             'r': recall / len(testSet),
             'tp': cost/len(testSet) ,
             'NT': len(grammar.getNts()),

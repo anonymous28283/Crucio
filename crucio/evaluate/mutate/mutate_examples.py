@@ -61,7 +61,7 @@ def mutateExamples2(parser, examples: Collection[Tokens]):
     return set(mutated)
 
 
-def evaluateMutatePrecision(examples, grammar, oracle):
+def evaluateSwapPrecision(examples, grammar, oracle):
     parser = STParser(grammar)
     mutated = mutateExamples2(parser, examples)
     NaiveExtendOracle(oracle).batch(mutated,'解析样本')
